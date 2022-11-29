@@ -89,7 +89,7 @@ main {
     /**
      * Property: h-offset, v-offset, blur (optional), spread (optional), color (optional)
      */
-    box-shadow: 10px 10px 0px 0px var(--dark-blue-1);
+    0px 6px 25px 25px rgba(0, 0, 0, 0.1);
     padding: 25px;
 
     margin: 0 auto;
