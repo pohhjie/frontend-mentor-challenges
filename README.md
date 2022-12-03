@@ -10,5 +10,6 @@ It's been awhile since I've worked on any front-end web development and I happen
 
 Feel free to critique or give me any suggestions to improve my code.
 
-Thank you.
+Thank you
+
 [@pohhjie](https://www.frontendmentor.io/profile/pohhjie)
