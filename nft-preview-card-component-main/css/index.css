@@ -4,7 +4,7 @@
     /* Primary Colors */
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
-    
+    --cyan-hover: hsla(178, 100%, 50%, 0.5);
     /* Neutral Colors */
     --dark-blue-1: hsl(217, 54%, 11%); /* Main background */
     --dark-blue-2: hsl(216, 50%, 16%); /* Card background */
@@ -29,7 +29,8 @@ body {
 
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h3 {
@@ -68,24 +69,23 @@ main {
 /* Components
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+/* Default attribution. */
 .attribution { 
     font-size: 11px; 
     text-align: center;
+    line-height: 1.5;
     height: 8%;
  }
-
     .attribution a { 
         color: var(--cyan); 
     }
-
-
-
 
 /* The (product) item */
 .item {
     background-color: var(--dark-blue-2);
     border-radius: var(--round-radius);
     box-sizing: border-box;
+
     /**
      * Property: h-offset, v-offset, blur (optional), spread (optional), color (optional)
      */
@@ -113,18 +113,26 @@ main {
     height: 100%;
 }
 
-
 /* Overlay for the thumbnail, to create highlight effect on hover*/
 .item-thumbnail-overlay {
+    /* Center align child elements under this class */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    /* For overlay above item-thumbnail */
     position: absolute;
     top: 0;
-    opacity: 0.4;
 }
+    /* Hide the 'eye' by default */
     .item-thumbnail-overlay > svg {
-        color: var(--white);
-        transform: translate3d(50%, 50%, 0);
+        visibility: hidden;
     }
 
+    /* On hover, render the 'eye' visible */
+    .item-thumbnail-overlay:hover > svg {
+        visibility: visible;
+    }
 
 
 /* Title & description for the item. */
@@ -188,10 +196,9 @@ main {
 }   
     /* For div only, highlight the background color.*/
     div.hoverable:hover {  
-        background-color: var(--cyan);
+        background-color: var(--cyan-hover);
         color: var(--white);
     }
-
 
 /* Use this when creating an icon followed by one-liner text */
 .icon-text {
@@ -202,3 +209,20 @@ main {
         content: " ";
         margin-right: 2px;
     }
+
+
+
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    /* The (product) item */
+    .item {
+        width: 340px; 
+        min-height: 540px;
+    }
+}
