@@ -2,7 +2,7 @@
 
 Hello! 
 
-This repository contains all my submissions from [Frontend Monitor](https://www.frontendmentor.io/) 
+This repository contains all my submissions from [Frontend Monitor](https://www.frontendmentor.io/).
 
 ## About
 
