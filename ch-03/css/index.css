@@ -1,0 +1,199 @@
+/* CSS Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    /* Primary Colors */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    
+    /* Neutral Colors */
+    --dark-blue: hsl(218, 23%, 16%); 
+    --dark-grayish-blue: hsl(217, 19%, 24%); 
+    --grayish-blue: hsl(217, 19%, 38%); 
+
+    --round-radius: 16px;
+}
+
+
+/* HTML Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+    background-color: var(--dark-blue);
+    box-sizing: border-box;
+    color: var(--light-cyan);
+
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+blockquote {
+    font-size: 28px;
+    font-weight: 800;
+}
+    blockquote::before {
+        content: '\201C'; /* &ldquo */
+    }
+
+    blockquote::after {
+        content: '\201D'; /* &rdquo */
+    }
+
+h6 {
+    margin: 0;
+}
+
+
+/** 
+ * Prevent highlight of images
+ * For mobile device, clicking/tapping on image twice on mobile will highlight. 
+ */
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+main {
+    /* Center-align the content */
+    display: flex;
+    place-items: center;
+    place-content: center;
+
+    margin: 0 auto;
+
+    /* Define max & min width */
+    max-width: 1440px;
+    min-width: 375px;
+
+    width: 100%;
+    height: 92%;
+}
+
+
+
+
+
+
+/* Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Default attribution. */
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    line-height: 1.5;
+    height: 8%;
+ }
+    .attribution a { 
+        color: hsl(228, 45%, 44%);
+    }
+
+
+
+/* Standard card */
+.card {
+    background-color: var(--dark-grayish-blue);
+    border-radius: var(--round-radius);
+    box-sizing: border-box;
+
+    display: grid;
+    padding: 16px 16px 35px;
+    position: relative;
+
+    margin: 1em;
+    max-width: 550px; 
+    min-height: 340px;
+    
+    width: 100%;
+    text-align: center;
+}
+
+
+.card-header {
+    margin-top: 1.2em;
+}
+    .card-header h6 {
+        color: var(--neon-green);
+        font-size: 12px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+    }
+
+
+.card-footer {
+    margin-bottom: 1.2em;
+}
+
+    
+.card-quote {
+    line-height: 1.45;
+    min-height: 200px;
+}
+
+
+/* Card button (for generating advice) */
+.card-button {
+    background-color: var(--neon-green);
+    border-radius: 50%; /* Round the button */
+
+    /* To make the button float in between the border of the card .*/
+    position: absolute;
+    left: calc(50% - 35px);
+    bottom: -35px;
+
+    width: 70px;
+    height: 70px;
+}
+    .card-button > svg {
+        vertical-align: middle;
+    }
+
+    /* On hover, glow the button */
+    .card-button:hover {
+        box-shadow: 0 0 40px 1px var(--neon-green);
+    }
+
+
+/* Divider at the bottom of the card before the floating button. */
+.card-divider.desktop {
+    display: block;
+}
+
+.card-divider.mobile {
+    display: none;
+}
+
+    
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 570px) {
+
+    /* The (product) item */
+    .card {
+        max-width: unset;
+        width: 90%;
+    }
+
+    .card-divider.desktop {
+        display: none;
+    }
+
+    .card-divider.mobile {
+        display: block;
+    }
+}
