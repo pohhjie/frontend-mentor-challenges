@@ -16,13 +16,14 @@
 </head>
 
 <body>
-  <main>
+  <main class="container">
+    <div style="position: absolute; top: 0; opacity: 0.75; z-index: 9999;">
+      <img src="design/desktop-design.jpg" alt="trace" style="margin: 0 auto; display: block;"/>
+    </div>
     <article class="card"> 
-      <header class="card-header">
-        <!-- Advice ID goes here --> 
-        <h6 id="text_advice_id">Advice #</h6> 
-      </header>
       <section class="card-quote">
+        <!-- Advice ID goes here --> 
+        <h6 class="card-header" id="text_advice_id">Advice #</h6> 
         <!-- Advice text goes here -->
         <blockquote id="text_advice_quote"></blockquote>
       </section>
@@ -42,7 +43,7 @@
     </article>
 
   </main>
-  <footer class="attribution">
+  <footer class="attribution container">
     Advice Generator App Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     <br />Coded by <a href="https://github.com/pohhjie">pohhjie</a>
   </footer>

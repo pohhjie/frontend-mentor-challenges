@@ -10,7 +10,8 @@
     --dark-grayish-blue: hsl(217, 19%, 24%); 
     --grayish-blue: hsl(217, 19%, 38%); 
 
-    --round-radius: 16px;
+    --round-radius: 10px;
+    --button-size: 66px;
 }
 
 
@@ -23,7 +24,7 @@ body {
 
     font-family: "Manrope", Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
 
     width: 100%;
     height: 100vh;
@@ -38,7 +39,7 @@ button {
 }
 
 blockquote {
-    font-size: 28px;
+    font-size: 1.75em;
     font-weight: 800;
 }
     blockquote::before {
@@ -71,12 +72,6 @@ main {
     place-items: center;
     place-content: center;
 
-    margin: 0 auto;
-
-    /* Define max & min width */
-    max-width: 1440px;
-    min-width: 375px;
-
     width: 100%;
     height: 92%;
 }
@@ -97,9 +92,17 @@ main {
     height: 8%;
  }
     .attribution a { 
-        color: hsl(228, 45%, 44%);
+        color: var(--neon-green)
     }
 
+    
+.container {
+    margin: 0 auto;
+
+    /* Define max & min width */
+    max-width: 1440px;
+    min-width: 375px;
+}
 
 
 /* Standard card */
@@ -108,13 +111,12 @@ main {
     border-radius: var(--round-radius);
     box-sizing: border-box;
 
-    display: grid;
-    padding: 16px 16px 35px;
+    padding: 3em;
     position: relative;
 
-    margin: 1em;
-    max-width: 550px; 
-    min-height: 340px;
+    margin: 1em 3em 3em;
+    max-width: 540px; 
+    min-height: 330px;
     
     width: 100%;
     text-align: center;
@@ -122,25 +124,26 @@ main {
 
 
 .card-header {
-    margin-top: 1.2em;
+    color: var(--neon-green);
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
 }
-    .card-header h6 {
-        color: var(--neon-green);
-        font-size: 12px;
-        letter-spacing: 0.4em;
-        text-transform: uppercase;
-    }
 
 
 .card-footer {
-    margin-bottom: 1.2em;
+    margin: 0 auto;
 }
 
     
 .card-quote {
-    line-height: 1.45;
+    display: grid; /* Force it to be in center. */
     min-height: 200px;
 }
+    .card-quote > blockquote {
+        line-height: 1.4em;
+        margin: 1em auto 1.3em;
+    }
 
 
 /* Card button (for generating advice) */
@@ -150,11 +153,11 @@ main {
 
     /* To make the button float in between the border of the card .*/
     position: absolute;
-    left: calc(50% - 35px);
-    bottom: -35px;
+    left: calc(50% - 33px);
+    bottom: -33px;
 
-    width: 70px;
-    height: 70px;
+    width: var(--button-size);
+    height: var(--button-size);
 }
     .card-button > svg {
         vertical-align: middle;
@@ -167,13 +170,17 @@ main {
 
 
 /* Divider at the bottom of the card before the floating button. */
-.card-divider.desktop {
-    display: block;
+.card-divider {
+    margin-bottom: 1.5em;
 }
+    
+    .card-divider.desktop {
+        display: block;
+    }
 
-.card-divider.mobile {
-    display: none;
-}
+    .card-divider.mobile {
+        display: none;
+    }
 
     
 
@@ -182,13 +189,7 @@ main {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 570px) {
-
-    /* The (product) item */
-    .card {
-        max-width: unset;
-        width: 90%;
-    }
-
+    
     .card-divider.desktop {
         display: none;
     }
