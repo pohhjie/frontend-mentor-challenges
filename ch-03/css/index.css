@@ -129,13 +129,8 @@ main {
     letter-spacing: 0.3em;
     text-transform: uppercase;
 }
-
-
-.card-footer {
-    margin: 0 auto;
-}
-
     
+
 .card-quote {
     display: grid; /* Force it to be in center. */
     min-height: 200px;
@@ -146,12 +141,26 @@ main {
     }
 
 
+/* Divider at the bottom of the card before the floating button. */
+.card-divider {
+    margin-bottom: 1.5em;
+}
+    .card-divider.desktop {
+        display: block;
+    }
+
+    .card-divider.mobile {
+        display: none;
+    }
+
+
 /* Card button (for generating advice) */
 .card-button {
     background-color: var(--neon-green);
     border-radius: 50%; /* Round the button */
 
     /* To make the button float in between the border of the card .*/
+    /* 33px == button-size / 2 */
     position: absolute;
     left: calc(50% - 33px);
     bottom: -33px;
@@ -169,18 +178,7 @@ main {
     }
 
 
-/* Divider at the bottom of the card before the floating button. */
-.card-divider {
-    margin-bottom: 1.5em;
-}
-    
-    .card-divider.desktop {
-        display: block;
-    }
 
-    .card-divider.mobile {
-        display: none;
-    }
 
     
 
