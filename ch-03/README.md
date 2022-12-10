@@ -17,10 +17,11 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS3 (Grid, Flexbox, CSS variables)
+- CSS3 (Grid, Flexbox, CSS variables & animation)
 - Vanilla JavaScript with [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 
 
 ### Useful resources
 
+- [w3schools on CSS animation](https://www.w3schools.com/css/css3_animations.asp) - Added an animation to the svg icon in the button.
 - [AdviceSlip.com](https://api.adviceslip.com/) - API Documentation for their request and response format.
 - [necolas/normalize.css](https://github.com/necolas/normalize.css/) - Kudos to Nicolas Gallagher for his work on normalize.css
