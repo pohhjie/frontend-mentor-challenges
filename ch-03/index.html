@@ -18,12 +18,12 @@
 <body>
   <main class="container">
     <article class="card"> 
-      <section class="card-quote">
+      <header class="card-quote">
         <!-- Advice ID goes here --> 
         <h6 class="card-header" id="text_advice_id">Advice #</h6> 
         <!-- Advice text goes here -->
         <blockquote id="text_advice_quote"></blockquote>
-      </section>
+      </header>
 
       <footer class="card-footer">
         <div class="card-divider desktop"> <!-- Desktop version -->
@@ -32,7 +32,7 @@
         <div class="card-divider mobile"> <!-- Mobile version -->
           <svg width="295" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z"/><g transform="translate(138)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg>
         </div>
-        <button class="card-button" id="btn_fetch_advice" type="button" value="fetch">
+        <button class="card-button" id="btn_fetch_advice" type="button" aria-label="fetch">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#202733"/></svg>
         </button>
       </footer>
@@ -44,6 +44,6 @@
     Advice Generator App Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     <br />Coded by <a href="https://github.com/pohhjie">pohhjie</a>
   </footer>
-  <script type="text/javascript" src="js/index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

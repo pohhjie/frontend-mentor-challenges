@@ -196,3 +196,19 @@ main {
         display: block;
     }
 }
+
+
+.animate-spin-dice {
+    animation: spin-dice 1000ms ease infinite;
+}
+
+
+@keyframes spin-dice {
+    50% {
+      transform: translateX(-10px);  
+    }
+
+    100% {
+        transform: rotateZ(90deg);
+    }
+}

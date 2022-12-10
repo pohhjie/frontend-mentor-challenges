@@ -12,18 +12,46 @@
     // URL to fetch advice.
     const url = 'https://api.adviceslip.com/advice';
 
+    // HTML elements
     const elementBtnFetch = document.getElementById('btn_fetch_advice'),
+          elementBtnFetchIcon = elementBtnFetch.firstElementChild,
           elementTextAdviceID = document.getElementById('text_advice_id'),
           elementTextAdviceQuote = document.getElementById('text_advice_quote');
 
+    // Flag to determine if the API has generated an AdviceSlip object.
+    let isAdviceGenerated = false;
+
+
+    // Event listener to be triggered when each animation iteration ends.
+    elementBtnFetchIcon.addEventListener('animationiteration', (event) => {
+        if (isAdviceGenerated) {
+            // Remove the animation after it completes.
+            elementBtnFetchIcon.classList.remove('animate-spin-dice');
+        }
+    })
+
+    // Event listener to handle button clicking.
     elementBtnFetch.addEventListener('click', async (event) => {
+        // Assume the user has already clicked this button.
+        if (elementBtnFetchIcon.classList.contains('animate-spin-dice')) {
+            return;
+        }
+
+        // Animate the svg icon inside the button. 
+        isAdviceGenerated = false;
+        elementBtnFetchIcon.classList.add('animate-spin-dice');
+
+        // Call API to generate advice.
         await generateAdvice().catch(error => {
             console.error(error.message);
+        }).finally(() => {
+            isAdviceGenerated = true;
         });
     });
 
     // Fetch advice at the start
     await generateAdvice();
+
 
     //----------------------------------------------------------------------------
     /**
@@ -55,7 +83,7 @@
      */
     //----------------------------------------------------------------------------
     async function generateAdvice() {
-        const adviceData = await getRandomAdvice().catch(error => {
+        const adviceData = await getRandomAdvice().catch((error) => {
             error.message;
         });
 
