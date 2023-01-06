@@ -62,6 +62,8 @@
         // Loop through the form elements and validate each field.
         for (elementInputIdx = 0; elementInputIdx < elementForm.length; elementInputIdx++) {
             elementInput = elementForm[elementInputIdx];
+
+            if (elementInput.tagName === 'BUTTON' && elementInput.type === 'submit') continue;
             validationErrorReason = _validateField(elementInput);
 
             if (validationErrorReason !== null) {

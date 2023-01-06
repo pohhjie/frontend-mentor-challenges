@@ -148,8 +148,8 @@ footer {
         position: absolute;
         top: 16px;
         right: 16px;
-
     }
+
 
 .text-field {
     background-color: transparent;
@@ -290,6 +290,14 @@ footer {
         margin-bottom: 16px;
     }
 
+    .text-field {
+        padding: 20px 20px;
+    }
+        .input-field.error .text-field {
+            padding: 20px 60px 20px 20px;
+        }
+
+
     .intro {
         margin: 72px 0 0;
     }
@@ -319,9 +327,7 @@ footer {
         padding: 20px 22px;
     } 
 
-    .text-field {
-        padding: 20px 60px 20px 20px;
-    }
+
 }
 
 
