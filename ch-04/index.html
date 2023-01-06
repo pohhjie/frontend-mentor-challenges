@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Challenge #4 -  Intro component with sign up form | Frontend Mentor</title>
+
+  <!-- Google CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" >
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css?v=1.0.1" />
+</head>
+
+<body>
+  <main>
+    <header class="intro">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.</p>
+    </header>
+    <section class="sign-up">
+      <header class="sign-up-wrapper sign-up-header">
+        <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+      </header>
+      <form class="sign-up-wrapper sign-up-form" action="/ch-04/index.html" novalidate>
+        <div class="input-field">
+          <label for="first_name"></label>
+          <input class="text-field" id="first_name" name="first_name" type="text" placeholder="First Name" required/>
+          <span class="text-field-error">First Name cannot be empty</span>
+        </div>
+        <div class="input-field">
+          <input class="text-field" name="last_name" type="text" placeholder="Last Name" required/>
+          <span class="text-field-error">Last Name cannot be empty</span>
+        </div>
+        <div class="input-field">
+          <input class="text-field" name="email" type="email" placeholder="Email Address" required/>
+          <span class="text-field-error">Email cannot be empty</span>
+        </div>
+        <div class="input-field">
+          <input class="text-field" name="email" type="password" placeholder="Password" required/>
+          <span class="text-field-error">Password cannot be empty</span>
+        </div>
+        <button class="button sign-up-form-submit" type="submit">Claim your free trial</button>
+        <p class="disclaimer">By clicking the button, you are agreeing to our <span class="link">Terms and Services</span> </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Intro Component with Sign-up Form Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      <br />Coded by <a href="https://github.com/pohhjie">pohhjie</a>
+    </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+/* CSS Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    /* Primary Colors */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    
+    /* Secondary Colors*/
+    --blue: hsl(248, 32%, 49%);
+
+    /* Neutral Colors */
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: #b9b6d3;
+    --white: #fff;
+    --black: #000;
+
+    --font-size: 18px;
+
+    --wrapper-round: 10px;
+    --textfield-round: 4px;
+    --button-size: 66px;
+}
+
+
+/* HTML Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+    background-color: var(--red);
+    background-image: url("../images/bg-intro-desktop.png");
+    box-sizing: border-box;
+
+    color: var(--white);
+
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+
+    /* Define max & min width */
+    min-width: 375px;
+    max-width: 1440px;
+    position: relative;
+    margin: 0 auto;
+}
+
+button {
+    border: 0;
+    border-radius: 4px;
+
+    cursor: pointer;
+    outline: none;
+
+    width: 100%;
+    padding: 1em;
+}
+
+blockquote {
+    font-size: 1.75em;
+    font-weight: 800;
+}
+    blockquote::before {
+        content: '\201C'; /* &ldquo */
+    }
+
+    blockquote::after {
+        content: '\201D'; /* &rdquo */
+    }
+
+h1 {
+    font-size: 49px;
+    line-height: 54px;
+    margin: 0;
+}
+
+
+/** 
+ * Prevent highlight of images
+ * For mobile device, clicking/tapping on image twice on mobile will highlight. 
+ */
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/**
+ * Hide placeholder text when input is onfocus
+ */
+input:focus::placeholder {
+    color: transparent;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 32px;
+
+    margin: 0 auto;
+    max-width: 1110px;
+
+    padding: 1em;
+    position: relative;
+}
+
+footer {
+    margin: 18px;
+    padding: 8px;
+}
+
+
+
+/* Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Default attribution. */
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    line-height: 1.5;
+    height: 8%;
+ }
+    .attribution a { 
+        color: hsl(228, 45%, 44%);
+    }
+
+.button {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+    .input-field.error:before{
+        background-image: url(../images/icon-error.svg);
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+
+    }
+
+.text-field {
+    background-color: transparent;
+    border: 1px solid var(--grayish-blue);
+    border-radius: var(--textfield-round);
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    outline: none;        
+    padding: 20px 32px;
+
+    width: 100%;
+}
+    .input-field.error .text-field {
+        border-color: var(--red);
+        color: var(--red);
+
+        padding: 20px 64px 20px 32px;
+    }
+
+    .input-field .text-field:focus {
+        border-color: var(--blue);
+        color: inherit;
+    }
+
+
+.text-field-error {
+    color: var(--red);
+    display: none;
+
+    font-weight: 500;
+    font-size: 11px;
+    font-style: italic;
+
+    margin: 0.5em;
+    text-align: right;
+}
+
+
+
+
+
+/* General
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.disclaimer {
+    color: var(--grayish-blue);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.8em;
+
+    margin-top: 16px;
+    margin-bottom: 0;   
+    padding: 0 16px;
+}
+    .disclaimer > .link {
+        color: var(--red);
+    }
+
+
+.intro {
+    color: var(--white);
+    margin-top: 280px;
+}
+    .intro > p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5em;
+        margin: 2em 0;
+    }
+
+
+.sign-up {
+    margin-top: 103px;
+}
+
+/* Generic wrapper for any of the sign-up component. */
+.sign-up-wrapper {
+    border-radius: var(--wrapper-round);
+    box-shadow: 0 8px 0 0 rgb(0 0 0 / 8%);
+
+    margin-bottom: 24px;
+    padding: 24px 36px;
+    text-align: center;    
+}
+
+.sign-up-header {
+    background-color: var(--blue);
+    padding: 20px;
+}
+    .sign-up-header > p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.3em;
+        padding: 0 24px;
+    }
+
+.sign-up-form {
+    background-color: var(--white);
+    color: var(--black);
+
+    padding: 40px;
+}
+
+.sign-up-form-submit {
+    background-color: var(--green);
+    box-shadow: 0 4px 0 0 hsl(154deg 59% 45%);
+}
+
+
+
+
+
+/* Animation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 769px) {
+    
+    body {
+        background-image: url("../images/bg-intro-mobile.png");
+    }
+    main {
+        display: block;
+        text-align: center;
+    }
+
+    .input-field {
+        margin-bottom: 16px;
+    }
+
+    .intro {
+        margin: 72px 0 0;
+    }
+        .intro > h1 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.25em;
+
+            margin: 24px auto;
+        }
+
+        .intro > p {
+            padding: 0 0.5em;
+        }
+
+    .sign-up {
+        display: block;
+        padding: 0.4em;
+        margin-top: 60px;
+    }
+
+    .sign-up-header > p {
+        line-height: 1.5em;
+    }
+
+    .sign-up-form {
+        padding: 20px 22px;
+    } 
+
+    .text-field {
+        padding: 20px 60px 20px 20px;
+    }
+}
+
+
